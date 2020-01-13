@@ -60,7 +60,7 @@ img {
   transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.7);
 }
-.section-heading 2::before {
+.section-heading h2::before {
   width: 10rem;
   height: 3px;
   border-radius: 0.8rem;
@@ -566,10 +566,10 @@ input[type="submit"]:hover {
   li::first-letter {
     font-size: 3.5rem;
   }
-  .about-heading h1 {
+  .about-heading h2 {
     font-size: 5rem;
   }
-  .section-heading h1 {
+  .section-heading h2 {
     font-size: 2.5rem;
   }
   .about-details .nav-list {
