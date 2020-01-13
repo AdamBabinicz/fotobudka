@@ -43,7 +43,7 @@ img {
   text-align: center;
   margin-bottom: 5rem;
 }
-.section-heading h1 {
+.section-heading h2 {
   font-size: 3.5rem;
   color: rgba(255, 255, 255, 0.3);
   text-transform: uppercase;
@@ -51,8 +51,8 @@ img {
   position: relative;
   margin-bottom: 1rem;
 }
-.section-heading h1::before,
-.section-heading h1::after {
+.section-heading h2::before,
+.section-heading h2::after {
   content: "";
   position: absolute;
   bottom: -0.5rem;
@@ -60,12 +60,12 @@ img {
   transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.7);
 }
-.section-heading h1::before {
+.section-heading 2::before {
   width: 10rem;
   height: 3px;
   border-radius: 0.8rem;
 }
-.section-heading h1::after {
+.section-heading h2::after {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 100%;
@@ -219,7 +219,7 @@ header {
   line-height: 2;
   margin-bottom: 6rem;
 }
-.about-heading h1 {
+.about-heading h2 {
   font-size: 8rem;
   opacity: 0.3;
 }
@@ -306,7 +306,7 @@ header {
   align-items: center;
   padding: 2rem;
 }
-.skill h1 {
+.skill h2 {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 2rem -2px 2rem 0;
@@ -352,7 +352,7 @@ header {
 .gallery-description {
   flex: 1;
 }
-.gallery-description h1 {
+.gallery-description h2 {
   font-size: 3rem;
   margin: 1rem 0;
   font-weight: 300;
@@ -400,7 +400,7 @@ header {
   text-align: left;
   width: 70%;
 }
-.timeline h1 {
+.timeline h2 {
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: 300;
