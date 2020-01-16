@@ -92,9 +92,9 @@ header {
   width: 100%;
   height: 100vh;
   position: fixed;
-  top: -100vh;
+  top: -102vh;
   z-index: 50;
-  background: url(../images/blue-1634110_1280.png) center/cover no-repeat;
+  background: url(../images/blue-1634110-1280.png) center/cover no-repeat;
   border-bottom-right-radius: 100%;
   border-bottom-left-radius: 100%;
   transition: all 0.9s cubic-bezier(1, 0, 0, 1);
