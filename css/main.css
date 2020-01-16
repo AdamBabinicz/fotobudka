@@ -109,6 +109,7 @@ header {
 }
 .nav-list li {
   margin: 1rem 2rem;
+  text-shadow: 0.05rem 0.05rem 0.05rem rgba(2, 2, 2, 0.3);
 }
 .nav-link {
   font-family: "Great Vibes", cursive;
