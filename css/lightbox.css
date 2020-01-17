@@ -71,8 +71,8 @@
   opacity: 1;
 }
 .lightbox__container img {
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: 60%;
   height: auto;
   animation: lightboxIn 0.5s;
 }
