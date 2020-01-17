@@ -435,6 +435,7 @@ header {
   width: 80%;
   height: 60vh;
   margin-bottom: 5rem;
+  border: 0;
 }
 /* End maps */
 /*Start timeline*/
