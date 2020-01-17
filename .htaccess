@@ -2,7 +2,7 @@
 RewriteEngine On
 
 RewriteCond %{HTTP_HOST} ^www\.foto-budka.netlify\.com$
-RewriteRule ^/?$ "http\:\/\/roszada.radom\.pl\/" [R=301,L]
+RewriteRule ^/?$ "http\:\/\/foto-budka.netlify\.com\/" [R=301,L]
 RewriteRule ^index.php$ https://foto-budka.netlify.com/ [R=301,L]
 RewriteRule ^index.html$ http://www.foto-budka.netlify.com [R=301,L]
 RewriteRule ^index.(php|html|htm)$/ [R=301,L]
