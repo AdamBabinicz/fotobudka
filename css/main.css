@@ -418,10 +418,16 @@ header {
   font-size: 1.5rem;
   text-transform: uppercase;
   color: #3883ff;
-  transition: color 0.6s;
+  transition: all 0.6s;
+  text-shadow: 0.05rem 0.05rem 0.05rem rgba(2, 2, 2, 0.3);
 }
 .gallery-description .cta:hover {
   color: #2f67cd;
+  background: rgba(251, 251, 251, 0.671);
+  padding: 1rem;
+  border-radius: 10px;
+  transform: scale(1.1);
+  font-weight: 600;
 }
 /*End gallery*/
 /* Start maps */
