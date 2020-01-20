@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Great+Vibes|Roboto&display=swap&subset=latin-ext");
 /*Start global*/
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -419,16 +421,42 @@ header {
   font-size: 1.5rem;
   text-transform: uppercase;
   color: #3883ff;
+  border: 3px solid #3883ff;
+  padding: 1rem 2.5rem;
   transition: all 0.6s;
   text-shadow: 0.05rem 0.05rem 0.05rem rgba(2, 2, 2, 0.3);
+  position: relative;
+}
+.gallery-description .cta::before,
+.gallery-description .cta::after {
+  content: "";
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border: #3883ff;
+  border-style: solid;
+  transition: all 0.6s;
+}
+.gallery-description .cta::before {
+  top: -1.5rem;
+  left: -1.5rem;
+  border-width: 3px 0 0 3px;
+}
+.gallery-description .cta::after {
+  bottom: -1.5rem;
+  right: -1.5rem;
+  border-width: 0 3px 3px 0;
+}
+.gallery-description .cta:hover::before,
+.gallery-description .cta:hover::after {
+  width: calc(100% + 3rem);
+  height: calc(100% + 3rem);
+  border-color: #fff;
 }
 .gallery-description .cta:hover {
   color: #2f67cd;
   background: rgba(251, 251, 251, 0.671);
-  padding: 1rem;
-  border-radius: 10px;
-  transform: scale(1.1);
-  font-weight: 600;
+  border-color: #fff;
 }
 /*End gallery*/
 /* Start maps */
@@ -656,7 +684,7 @@ input[type="submit"]:hover {
     height: 100%;
   }
   .gallery-description .cta {
-    margin-bottom: 1.5rem;
+    margin-bottom: 3.5rem;
   }
 }
 @media screen and (max-width: 600px) {
