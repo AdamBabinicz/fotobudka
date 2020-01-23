@@ -628,7 +628,7 @@ input[type="submit"]:hover {
 /*Start media queries*/
 @media (orientation: landscape) {
   .landing-text h1::first-letter {
-    margin-top: 1rem;
+    margin-top: 5rem;
   }
 }
 @media screen and (max-width: 768px) {
