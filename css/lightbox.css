@@ -71,9 +71,9 @@
   opacity: 1;
 }
 .lightbox__container img {
-  width: 100%;
+  /* width: auto;
   height: 100vh;
-  height: auto;
+  height: auto; */
   animation: lightboxIn 0.5s;
 }
 .lightbox__container {
