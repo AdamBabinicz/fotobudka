@@ -692,10 +692,8 @@ input[type="submit"]:hover {
 }
 @media screen and (max-width: 600px) {
   .landing-text h1 {
-    margin-top: -3rem;
   }
   .landing-text h1::first-letter {
-    margin-top: -5rem;
   }
   .menu-toggler {
     top: 2rem;
