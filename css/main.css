@@ -194,6 +194,7 @@ header {
   padding: 1rem;
   user-select: none;
   text-shadow: 0.05rem 0.05rem 0.05rem rgba(2, 2, 2, 0.3);
+  line-height: 6rem;
 }
 .landing-text h1::first-letter {
   font-size: 15rem;
