@@ -629,6 +629,7 @@ input[type="submit"]:hover {
 @media screen and (max-width: 768px) {
   .landing-text h1 {
     font-size: 6.5rem;
+    margin-top: 2rem;
   }
   .landing-text h1::first-letter {
     font-size: 10rem;
