@@ -197,7 +197,7 @@ header {
   line-height: 6rem;
 }
 .landing-text h1::first-letter {
-  font-size: 15rem;
+  font-size: 13rem;
 }
 .landing-text h2 {
   font-family: "Great Vibes", cursive;
