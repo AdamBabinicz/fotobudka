@@ -628,16 +628,17 @@ input[type="submit"]:hover {
 /*Start media queries*/
 @media screen and (max-width: 768px) {
   .landing-text h1 {
-    font-size: 2.5rem;
+    font-size: 6.5rem;
   }
   .landing-text h1::first-letter {
-    font-size: 6rem;
+    font-size: 10rem;
   }
   .landing-text h2 {
-    font-size: 1.7rem;
-    width: 50%;
+    font-size: 3rem;
+    width: 80%;
     margin: 3rem auto 0;
-    line-height: 3rem;
+    padding: 1rem;
+    /* line-height: 3rem; */
   }
   .nav-list {
     flex-direction: column;
