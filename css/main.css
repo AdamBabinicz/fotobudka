@@ -628,11 +628,11 @@ input[type="submit"]:hover {
 /*Start media queries*/
 @media screen and (max-width: 768px) {
   .landing-text h1 {
-    font-size: 6.5rem;
+    font-size: 4.5rem;
     margin-top: 4rem;
   }
   .landing-text h1::first-letter {
-    font-size: 10rem;
+    font-size: 8rem;
   }
   .landing-text h2 {
     font-size: 3rem;
