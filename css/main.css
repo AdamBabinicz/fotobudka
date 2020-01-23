@@ -60,6 +60,7 @@ img {
   position: absolute;
   bottom: -0.5rem;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.7);
 }
@@ -87,6 +88,15 @@ img {
 header {
   width: 100%;
   height: 100vh;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.2)),
+      to(rgba(0, 0, 0, 0.6))
+    ),
+    url("../images/82353174_537506073518862_6929396335812542464_n.jpg")
+      no-repeat center/cover fixed;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
     url("../images/82353174_537506073518862_6929396335812542464_n.jpg")
       no-repeat center/cover fixed;
@@ -100,14 +110,18 @@ header {
   background: url(../images/blue-1634110-1280.png) center/cover no-repeat;
   border-bottom-right-radius: 100%;
   border-bottom-left-radius: 100%;
+  -webkit-transition: all 0.9s cubic-bezier(1, 0, 0, 1);
   transition: all 0.9s cubic-bezier(1, 0, 0, 1);
 }
 .nav-list {
   list-style: none;
   width: 100%;
   height: 100%;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   align-items: center;
 }
 .nav-list li {
@@ -121,6 +135,13 @@ header {
 }
 .nav-link:hover,
 .nav-link:focus {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#ffe838),
+    to(#5775fd)
+  );
   background: linear-gradient(to top, #ffe838, #5775fd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -135,17 +156,32 @@ header {
   right: 5rem;
   width: 5rem;
   height: 4rem;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   flex-direction: column;
+  -webkit-box-pack: justify;
   justify-content: space-between;
   cursor: pointer;
   z-index: 1500;
+  -webkit-transition: -webkit-transform 0.6s ease-out;
+  transition: -webkit-transform 0.6s ease-out;
   transition: transform 0.6s ease-out;
+  transition: transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
 }
 .menu-toggler.open {
+  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 .bar {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ffe838),
+    to(#5775fd)
+  );
   background: linear-gradient(to right, #ffe838, #5775fd);
   width: 100%;
   height: 4px;
@@ -155,24 +191,39 @@ header {
   width: 50%;
 }
 .bar.start {
+  -webkit-transform-origin: right;
   transform-origin: right;
+  -webkit-transition: -webkit-transform 0.6s
+    cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: -webkit-transform 0.6s cubic-bezier(0.54, -0.81, 0.57, 0.57);
   transition: transform 0.6s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: transform 0.6s cubic-bezier(0.54, -0.81, 0.57, 0.57),
+    -webkit-transform 0.6s cubic-bezier(0.54, -0.81, 0.57, 0.57);
 }
 .open .bar.start {
+  -webkit-transform: rotate(-450deg) translateX(0.8rem);
   transform: rotate(-450deg) translateX(0.8rem);
 }
 .bar.end {
   align-self: flex-end;
+  -webkit-transform-origin: left;
   transform-origin: left;
+  -webkit-transition: -webkit-transform 0.5s
+    cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: -webkit-transform 0.5s cubic-bezier(0.54, -0.81, 0.57, 0.57);
   transition: transform 0.5s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: transform 0.5s cubic-bezier(0.54, -0.81, 0.57, 0.57),
+    -webkit-transform 0.5s cubic-bezier(0.54, -0.81, 0.57, 0.57);
 }
 .open .bar.end {
+  -webkit-transform: rotate(-450deg) translateX(-0.8rem);
   transform: rotate(-450deg) translateX(-0.8rem);
 }
 .landing-text {
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 100%;
   text-align: center;
@@ -188,10 +239,20 @@ header {
 .landing-text h1 {
   font-size: 7rem;
   font-family: "Great Vibes", cursive;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#ffffff),
+    to(#5775fd)
+  );
   background: linear-gradient(to top, #ffffff, #5775fd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   text-shadow: 0.05rem 0.05rem 0.05rem rgba(2, 2, 2, 0.3);
 }
@@ -208,12 +269,23 @@ header {
 
 /*Start about*/
 .about {
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.5)),
+      to(rgba(0, 0, 0, 0.3))
+    ),
+    url("../images/background-1462755_1280.jpg") no-repeat center/cover fixed;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
     url("../images/background-1462755_1280.jpg") no-repeat center/cover fixed;
 }
 .about .container {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
+  -webkit-box-pack: center;
   justify-content: center;
 }
 .about-heading {
@@ -232,10 +304,12 @@ header {
   margin-bottom: 3rem;
 }
 .profile-img {
+  -webkit-box-flex: 1;
   flex: 1;
   /* width: 50rem; */
 }
 .about-details {
+  -webkit-box-flex: 1;
   flex: 1;
 }
 .social-media {
@@ -243,6 +317,7 @@ header {
 }
 .social-media i {
   font-size: 4rem;
+  -webkit-transition: color 0.6s;
   transition: color 0.6s;
 }
 .fa-facebook-f:hover {
@@ -271,14 +346,6 @@ header {
     #c5138e 60%,
     #4f5bd5 90%
   );
-  background-image: -webkit-radial-gradient(
-    farthest-corner at 30% 107%,
-    #ece386 0%,
-    #ece386 5%,
-    #ec4838 45%,
-    #c5138e 60%,
-    #4f5bd5 90%
-  );
   background-image: radial-gradient(
     farthest-corner at 30% 107%,
     #ece386 0%,
@@ -292,6 +359,14 @@ header {
 
 /*Start offer*/
 .offer {
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.5)),
+      to(rgba(0, 0, 0, 0.3))
+    ),
+    url("../images/mesh-1430108_1280.png") no-repeat center/cover fixed;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
     url("../images/mesh-1430108_1280.png") no-repeat center/cover fixed;
 }
@@ -303,9 +378,14 @@ header {
   text-align: center;
 }
 .skill {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   flex-direction: column;
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   align-items: center;
   padding: 2rem;
 }
@@ -320,13 +400,16 @@ header {
   border: 3px solid #ffe838;
   background: #5775fd;
   margin-bottom: 2rem;
+  display: -webkit-box;
   display: flex;
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .icon-container i {
   color: #ffe838;
   font-size: 5rem;
   margin: auto;
+  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 .icon-container i:nth-last-child(1) {
@@ -336,12 +419,23 @@ header {
 
 /*Start gallery*/
 .gallery {
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.5)),
+      to(rgba(0, 0, 0, 0.3))
+    ),
+    url("../images/background-1462755_1280.jpg") no-repeat center/cover fixed;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
     url("../images/background-1462755_1280.jpg") no-repeat center/cover fixed;
 }
 .gallery-item {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
+  -webkit-box-pack: center;
   justify-content: center;
   margin-bottom: 5rem;
 }
@@ -349,15 +443,18 @@ header {
   margin-bottom: 0;
 }
 .gallery-img {
+  -webkit-box-flex: 1;
   flex: 1;
   position: relative;
   overflow: hidden;
   /* width: 50rem; */
 }
 .gallery-img img {
+  -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
 .gallery-img:hover img {
+  -webkit-transform: rotate(4deg) scale(1.2);
   transform: rotate(4deg) scale(1.2);
   opacity: 0.5;
 }
@@ -368,6 +465,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   z-index: 100;
 }
@@ -381,6 +479,7 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   color: #fff;
   font-size: 25px;
@@ -388,10 +487,14 @@ header {
   height: 70px;
   border: 3px solid #fff;
   border-radius: 100%;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
+  -webkit-box-pack: center;
   justify-content: center;
   opacity: 0;
+  -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
   z-index: 101;
 }
@@ -402,6 +505,7 @@ header {
   display: contents;
 }
 .gallery-description {
+  -webkit-box-flex: 1;
   flex: 1;
 }
 .gallery-description h2 {
@@ -423,6 +527,7 @@ header {
   color: #3883ff;
   border: 3px solid #3883ff;
   padding: 1rem 2.5rem;
+  -webkit-transition: all 0.6s;
   transition: all 0.6s;
   text-shadow: 0.05rem 0.05rem 0.05rem rgba(2, 2, 2, 0.3);
   position: relative;
@@ -435,6 +540,7 @@ header {
   height: 4rem;
   border: #3883ff;
   border-style: solid;
+  -webkit-transition: all 0.6s;
   transition: all 0.6s;
 }
 .gallery-description .cta::before {
@@ -461,10 +567,19 @@ header {
 /*End gallery*/
 /* Start maps */
 .maps {
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.5)),
+      to(rgba(0, 0, 0, 0.3))
+    ),
+    url("../images/space-4497348_1280.jpg") no-repeat center/cover fixed;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
     url("../images/space-4497348_1280.jpg") no-repeat center/cover fixed;
 }
 .maps iframe {
+  display: -webkit-box;
   display: flex;
   margin: 0 auto;
   width: 80%;
@@ -508,6 +623,7 @@ header {
   position: absolute;
   display: block;
   top: 50%;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 .timeline .date::before {
@@ -555,6 +671,7 @@ input[type="submit"] {
   padding: 1rem 2rem;
   border-radius: 0.8rem;
   cursor: pointer;
+  -webkit-transition: all 0.6s;
   transition: all 0.6s;
 }
 input[type="submit"]:hover {
@@ -579,7 +696,9 @@ input[type="submit"]:hover {
   top: -2.5rem;
   right: 5rem;
   border-radius: 100%;
+  display: -webkit-box;
   display: flex;
+  -webkit-animation: pulse 2s infinite;
   animation: pulse 2s infinite;
   cursor: pointer;
 }
@@ -592,18 +711,22 @@ input[type="submit"]:hover {
   font-size: 1.4rem;
 }
 .contact .con {
+  display: -webkit-box;
   display: flex;
 }
 .contact .tel,
 .contact .mail {
   margin: 0 auto;
   width: 100%;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
   flex-wrap: wrap;
   font-size: 2rem;
 }
 .contact .tel a {
+  -webkit-transition: color 0.6s;
   transition: color 0.6s;
 }
 .contact .tel a:hover {
@@ -612,6 +735,17 @@ input[type="submit"]:hover {
 /*End footer*/
 
 /*Start animations*/
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(87, 173, 253, 0.99);
+  }
+  70% {
+    box-shadow: 0 0 0 2rem rgba(87, 173, 253, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(87, 173, 253, 0);
+  }
+}
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(87, 173, 253, 0.99);
@@ -646,6 +780,8 @@ input[type="submit"]:hover {
     /* line-height: 3rem; */
   }
   .nav-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
   }
   li {
@@ -664,6 +800,8 @@ input[type="submit"]:hover {
     font-size: 2.5rem;
   }
   .about-details .nav-list {
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
     flex-direction: initial;
   }
   .about-details li {
@@ -712,6 +850,8 @@ input[type="submit"]:hover {
     margin-bottom: 0.1rem;
   }
   .about .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
   }
   .about-heading p {
@@ -727,14 +867,18 @@ input[type="submit"]:hover {
     margin: 0 0 5rem 0;
   }
   .gallery-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
   }
   .gallery-img {
     margin: 0 0 2rem 0;
+    -webkit-box-ordinal-group: 2;
     order: 1;
   }
   .gallery-description {
     margin: 0;
+    -webkit-box-ordinal-group: 3;
     order: 2;
   }
   .timeline p {
@@ -750,6 +894,8 @@ input[type="submit"]:hover {
     right: 2rem;
   }
   .contact .con {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
   }
 }
