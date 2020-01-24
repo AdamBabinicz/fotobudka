@@ -95,9 +95,9 @@ header {
       from(rgba(0, 0, 0, 0.2)),
       to(rgba(0, 0, 0, 0.6))
     ),
-    url("../images/background-2400765_1280.jpg") no-repeat center/cover fixed;
+    url("../images/background-2400765-1280.jpg") no-repeat center/cover fixed;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
-    url("../images/background-2400765_1280.jpg") no-repeat center/cover fixed;
+    url("../images/background-2400765-1280.jpg") no-repeat center/cover fixed;
 }
 .top-nav {
   width: 100%;
