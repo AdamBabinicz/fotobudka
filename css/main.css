@@ -871,9 +871,9 @@ input[type="submit"]:hover {
   }
   .about-heading p {
     font-size: 1.5rem;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem;
   }
-  .nav-list {
+  .nav-list li {
     font-size: 2.5rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
