@@ -21,7 +21,8 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 100vw;
+  width: 100%;
+  /* margin: auto; */
   background: rgba(0, 0, 0, 0.9);
   z-index: 102;
   overflow-x: hidden;
@@ -35,7 +36,7 @@
 }
 .lightbox__container {
   display: -webkit-box;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
   align-items: center;
   -webkit-box-pack: center;
@@ -52,7 +53,7 @@
   position: fixed;
   top: 50%;
   margin-top: -14px;
-  right: 0;
+  right: 0rem;
   z-index: 11;
   outline: none;
 }
@@ -71,7 +72,7 @@
   position: fixed;
   text-indent: -3000px;
   top: 20px;
-  right: 18px;
+  right: 2rem;
   z-index: 12;
 }
 .lightbox button {
