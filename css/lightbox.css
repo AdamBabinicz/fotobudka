@@ -86,7 +86,7 @@
 .lightbox__container img {
   max-width: 80%;
   min-height: 100%;
-  height: auto;
+  /* height: auto; */
   -webkit-animation: lightboxIn 0.5s;
   animation: lightboxIn 0.5s;
 }
