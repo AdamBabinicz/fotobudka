@@ -37,7 +37,7 @@
   background: url("../images/next.png") center center/ 36px 36px no-repeat;
   width: 50px;
   height: 50px;
-  position: fixed;
+  position: absolute;
   top: 50%;
   margin-top: -14px;
   right: 0;
@@ -55,7 +55,7 @@
   border: none;
   background: url("../images/close.png") center center/ 100% 100% no-repeat
     transparent;
-  position: fixed;
+  position: absolute;
   text-indent: -3000px;
   top: 20px;
   right: 18px;
