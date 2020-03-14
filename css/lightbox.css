@@ -20,7 +20,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   background: rgba(0, 0, 0, 0.9);
   z-index: 102;
@@ -28,6 +28,8 @@
   animation: lightboxIn 0.5s;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
+  display: grid;
+  place-content: center;
 }
 .lightbox.fadeOut {
   opacity: 0;
@@ -39,7 +41,7 @@
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  height: 100vh;
+  max-height: 100vh;
   width: 100%;
 }
 .lightbox__next,
@@ -87,8 +89,9 @@
   max-width: 100vh;
   width: auto;
   /* min-height: 100%; */
-  max-height: 100vh;
+  min-height: 100%;
   height: auto;
+
   -webkit-animation: lightboxIn 0.5s;
   animation: lightboxIn 0.5s;
 }
