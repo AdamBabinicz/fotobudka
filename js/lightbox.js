@@ -77,9 +77,9 @@ class Lightbox {
     const dom = document.createElement("div");
     dom.classList.add("lightbox");
     dom.innerHTML = `
-         <button class="lightbox__close">Close</button>
-         <button class="lightbox__next">Next</button>
-         <button class="lightbox__prev">Prev</button>
+         <button class="lightbox__close">close</button>
+         <button class="lightbox__next">next</button>
+         <button class="lightbox__prev">prev</button>
          <div class="lightbox__container">
          </div>`;
     dom
