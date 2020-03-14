@@ -196,7 +196,11 @@ header {
   -webkit-transition: -webkit-transform 0.6s
     cubic-bezier(0.54, -0.81, 0.57, 0.57);
   transition: -webkit-transform 0.6s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  -webkit-transition: -webkit-transform 0.6s
+    cubic-bezier(0.54, -0.81, 0.57, 0.57);
   transition: transform 0.6s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: transform 0.6s cubic-bezier(0.54, -0.81, 0.57, 0.57),
+    -webkit-transform 0.6s cubic-bezier(0.54, -0.81, 0.57, 0.57);
   transition: transform 0.6s cubic-bezier(0.54, -0.81, 0.57, 0.57),
     -webkit-transform 0.6s cubic-bezier(0.54, -0.81, 0.57, 0.57);
 }
@@ -211,7 +215,11 @@ header {
   -webkit-transition: -webkit-transform 0.5s
     cubic-bezier(0.54, -0.81, 0.57, 0.57);
   transition: -webkit-transform 0.5s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  -webkit-transition: -webkit-transform 0.5s
+    cubic-bezier(0.54, -0.81, 0.57, 0.57);
   transition: transform 0.5s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transition: transform 0.5s cubic-bezier(0.54, -0.81, 0.57, 0.57),
+    -webkit-transform 0.5s cubic-bezier(0.54, -0.81, 0.57, 0.57);
   transition: transform 0.5s cubic-bezier(0.54, -0.81, 0.57, 0.57),
     -webkit-transform 0.5s cubic-bezier(0.54, -0.81, 0.57, 0.57);
 }
@@ -880,6 +888,7 @@ input[type="submit"]:hover {
     grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr)); */
   }
   .nav-list li {
+    display: -webkit-box;
     display: flex;
     margin: 0;
   }
