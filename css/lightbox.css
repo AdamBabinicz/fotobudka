@@ -37,7 +37,7 @@
   background: url("../images/next.png") center center/ 36px 36px no-repeat;
   width: 50px;
   height: 50px;
-  position: absolute;
+  position: fixed;
   top: 50%;
   margin-top: -14px;
   right: 0;
@@ -55,7 +55,7 @@
   border: none;
   background: url("../images/close.png") center center/ 100% 100% no-repeat
     transparent;
-  position: absolute;
+  position: fixed;
   text-indent: -3000px;
   top: 20px;
   right: 18px;
@@ -80,8 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin: auto 10px;
   min-height: 100vh;
 }
 .lightbox__loader {
