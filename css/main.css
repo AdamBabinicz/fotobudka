@@ -758,6 +758,7 @@ input[type="submit"]:hover {
 }
 #fb-root {
   position: absolute;
+  top: 0;
   right: 10rem;
 }
 /*End footer*/
