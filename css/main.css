@@ -756,6 +756,9 @@ input[type="submit"]:hover {
 .contact .tel a:hover {
   color: #5775fd;
 }
+.fb-customerchat {
+  position: absolute;
+}
 /*End footer*/
 
 /*Start animations*/
