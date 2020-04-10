@@ -756,11 +756,6 @@ input[type="submit"]:hover {
 .contact .tel a:hover {
   color: #5775fd;
 }
-.fb-customerchat {
-  position: absolute;
-  top: 0;
-  right: 10rem !important;
-}
 /*End footer*/
 
 /*Start animations*/
@@ -926,7 +921,7 @@ input[type="submit"]:hover {
     width: 100%;
   }
   .up {
-    right: 2rem;
+    left: 2rem;
   }
   .contact .con {
     -webkit-box-orient: vertical;
