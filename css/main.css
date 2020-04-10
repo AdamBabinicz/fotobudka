@@ -759,7 +759,7 @@ input[type="submit"]:hover {
 .fb-customerchat {
   position: absolute;
   top: 0;
-  right: 10rem;
+  right: 10rem !important;
 }
 /*End footer*/
 
