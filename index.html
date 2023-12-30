@@ -613,8 +613,14 @@
       <div class="up" id="up">
         <i class="fas fa-chevron-up"></i>
       </div>
-      <p>2020 - 2023</p>
+      <p id="yearRange">2020 -</p>
     </footer>
+    <script>
+      var currentDate = new Date();
+      var currentYear = currentDate.getFullYear();
+      var yearRangeElement = document.getElementById("yearRange");
+      yearRangeElement.innerHTML = currentYear - 1 + " - " + currentYear;
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/main.js"></script>
