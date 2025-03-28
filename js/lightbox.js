@@ -3,12 +3,12 @@ class Lightbox {
   static init() {
     const links = Array.from(
       document.querySelectorAll(
-        'a[href$=".png"], a[href$=".jpg"], a[href$=".jpeg"]'
+        'a[href$=".png"], a[href$=".jpg"], a[href$=".jpeg"], a[href$=".avif"]'
       )
     );
-    const gallery = links.map(link => link.getAttribute("href"));
-    links.forEach(link =>
-      link.addEventListener("click", e => {
+    const gallery = links.map((link) => link.getAttribute("href"));
+    links.forEach((link) =>
+      link.addEventListener("click", (e) => {
         e.preventDefault();
         new Lightbox(e.currentTarget.getAttribute("href"), gallery);
       })
@@ -59,7 +59,7 @@ class Lightbox {
   }
   next(e) {
     e.preventDefault();
-    let i = this.images.findIndex(image => image === this.url);
+    let i = this.images.findIndex((image) => image === this.url);
     if (i === this.images.length - 1) {
       i = -1;
     }
@@ -67,7 +67,7 @@ class Lightbox {
   }
   prev(e) {
     e.preventDefault();
-    let i = this.images.findIndex(image => image === this.url);
+    let i = this.images.findIndex((image) => image === this.url);
     if (i === 0) {
       i = this.images.length;
     }

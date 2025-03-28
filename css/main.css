@@ -462,6 +462,7 @@ header {
   -webkit-box-pack: center;
   justify-content: center;
   margin-bottom: 5rem;
+  margin-top: 2rem;
 }
 .gallery-item {
   margin-bottom: 0;
