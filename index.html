@@ -655,10 +655,9 @@
           <h3>Zapraszamy!</h3>
         </div>
         <form
+          name="contact"
           method="POST"
-          action="send.php"
-          enctype="text/plain"
-          onsubmit="mail_form(this); return false"
+          data-netlify="true"
           data-aos="fade-up"
           data-aos-delay="300"
           target="_blank"
@@ -672,6 +671,7 @@
             placeholder="Podaj swoje imię i nazwisko ..."
             required
           />
+
           <label for="email">Email:</label>
           <input
             type="email"
@@ -680,17 +680,27 @@
             placeholder="Podaj swój email ..."
             required
           />
+
           <label for="service">Wybierz usługę:</label>
-          <select name="services" id="service">
+          <select name="services" id="service" required>
             <option value="">Namiot imprezowy</option>
-            <option value="">Stoły</option>
-            <option value="">Krzesła</option>
-            <option value="">Obrusy</option>
-            <option value="">Fontanna czekoladowa i&nbsp;koktajlowa</option>
-            <option value="">Inne</option>
+            <option value="Stoły">Stoły</option>
+            <option value="Krzesła">Krzesła</option>
+            <option value="Obrusy">Obrusy</option>
+            <option value="Fontanna czekoladowa i koktajlowa">
+              Fontanna czekoladowa i koktajlowa
+            </option>
+            <option value="Inne">Inne</option>
           </select>
+
           <label for="subject">Temat:</label>
-          <textarea name="subject" id="subject" cols="10" rows="10"></textarea>
+          <textarea
+            name="subject"
+            id="subject"
+            cols="10"
+            rows="10"
+            required
+          ></textarea>
           <input type="submit" value="Submit" />
         </form>
       </div>

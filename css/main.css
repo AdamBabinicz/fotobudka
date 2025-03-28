@@ -100,8 +100,7 @@ header {
     url("../images/82353174-537506073518862-6929396335812542464-n.avif")
       no-repeat center/cover fixed;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
-    url("../images/82353174-537506073518862-6929396335812542464-n.avif")
-      no-repeat center/cover fixed;
+    url("../images/1.avif") no-repeat center/cover fixed;
 }
 .top-nav {
   width: 100%;
