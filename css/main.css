@@ -76,7 +76,7 @@ img {
   border-radius: 100%;
   bottom: -1rem;
 }
-.section-heading h6 {
+.section-heading h3 {
   font-size: 1.6rem;
   font-weight: 300;
 }
@@ -311,7 +311,7 @@ header {
   font-size: 8rem;
   opacity: 0.3;
 }
-.about-heading h6 {
+.about-heading h3 {
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 3rem;
@@ -413,10 +413,11 @@ header {
   align-items: center;
   padding: 2rem;
 }
-.skill h2 {
+.skill h4 {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 2rem -2px 2rem 0;
+  font-size: 1.3rem;
 }
 .icon-container {
   width: 10rem;
@@ -538,7 +539,7 @@ header {
   margin: 1rem 0;
   font-weight: 300;
 }
-.gallery-description h6 {
+.gallery-description h3 {
   font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 300;
