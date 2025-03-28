@@ -743,9 +743,26 @@
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
-        "@type": "Organization",
+        "@type": "LocalBusiness",
         "name": "Ewa Gierczak-Kucharska",
         "url": "https://namioty-imprezowe.netlify.app",
+        "logo": "https://namioty-imprezowe.netlify.app/logo.png",
+        "image": "https://namioty-imprezowe.netlify.app/zdjecie.jpg",
+        "description": "Wynajem namiotów imprezowych, stołów, krzeseł, obrusów oraz fontann czekoladowych.",
+        "telephone": "+48 531 890 827",
+        "email": "mariusz1989poczta@wp.pl",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Żeromskiego 95/97",
+          "addressLocality": "Radom",
+          "postalCode": "26-610",
+          "addressCountry": "PL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.399932",
+          "longitude": "21.167334"
+        },
         "sameAs": [
           "https://www.facebook.com/Fotobudka-bia%C5%82y-dywan-%C5%9Blubny-fontanny-czekoladowe-i-koktajlowe-100945721456541",
           "https://www.google.pl/maps/place/Fontanny+Czekoladowe+i+Koktajlowe+-+wynajem/@51.4025091,21.1632101,14z/data=!4m5!3m4!1s0x0:0xbd58a401cded7bc2!8m2!3d51.3999118!4d21.1674088?hl=pl",
@@ -753,14 +770,30 @@
           "https://www.youtube.com/channel/UCfyB_0gsVGMKj-5BijJYteQ",
           "https://www.pinterest.com/watapopcorn/",
           "https://www.instagram.com/ewa1989/"
-        ]
+        ],
+        "openingHours": "Mo-Su 08:00-22:00",
+        "priceRange": "PLN"
       }
     </script>
+
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
-        "@type": "Blog",
-        "url": "https://fontanny-czekoladowe-koktajlowe.blogspot.com/"
+        "@type": "Service",
+        "serviceType": "Wynajem namiotów imprezowych",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Ewa Gierczak-Kucharska"
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Radom i okolice"
+        },
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://namioty-imprezowe.netlify.app",
+          "availableLanguage": ["pl", "en"]
+        }
       }
     </script>
   </body>
