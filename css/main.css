@@ -696,13 +696,13 @@ textarea {
 }
 input[type="submit"] {
   width: initial;
-  background: #5775fd;
+  background: #254dff;
   color: #eee;
   padding: 1rem 2rem;
   border-radius: 0.8rem;
   cursor: pointer;
   -webkit-transition: all 0.6s;
-  transition: all 0.6s;
+  transition: all 0.6s ease-in-out;
 }
 input[type="submit"]:hover {
   color: #221e3f;
