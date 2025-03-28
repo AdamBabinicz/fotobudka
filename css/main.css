@@ -97,10 +97,10 @@ header {
       from(rgba(0, 0, 0, 0.2)),
       to(rgba(0, 0, 0, 0.6))
     ),
-    url("../images/82353174-537506073518862-6929396335812542464-n.jpg")
+    url("../images/82353174-537506073518862-6929396335812542464-n.avif")
       no-repeat center/cover fixed;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
-    url("../images/82353174-537506073518862-6929396335812542464-n.jpg")
+    url("../images/82353174-537506073518862-6929396335812542464-n.avif")
       no-repeat center/cover fixed;
 }
 .top-nav {
@@ -290,9 +290,9 @@ header {
       from(rgba(0, 0, 0, 0.5)),
       to(rgba(0, 0, 0, 0.3))
     ),
-    url("../images/background-1462755_1280.jpg") no-repeat center/cover fixed;
+    url("../images/background-1462755_1280.avif") no-repeat center/cover fixed;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-    url("../images/background-1462755_1280.jpg") no-repeat center/cover fixed;
+    url("../images/background-1462755_1280.avif") no-repeat center/cover fixed;
 }
 .about .container {
   display: -webkit-box;
@@ -452,9 +452,9 @@ header {
       from(rgba(0, 0, 0, 0.5)),
       to(rgba(0, 0, 0, 0.3))
     ),
-    url("../images/background-1462755_1280.jpg") no-repeat center/cover fixed;
+    url("../images/background-1462755_1280.avif") no-repeat center/cover fixed;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-    url("../images/background-1462755_1280.jpg") no-repeat center/cover fixed;
+    url("../images/background-1462755_1280.avif") no-repeat center/cover fixed;
 }
 .gallery-item {
   display: -webkit-box;
@@ -601,9 +601,9 @@ header {
       from(rgba(0, 0, 0, 0.5)),
       to(rgba(0, 0, 0, 0.3))
     ),
-    url("../images/space-4497348_1280.jpg") no-repeat center/cover fixed;
+    url("../images/space-4497348_1280.avif") no-repeat center/cover fixed;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-    url("../images/space-4497348_1280.jpg") no-repeat center/cover fixed;
+    url("../images/space-4497348_1280.avif") no-repeat center/cover fixed;
 }
 .maps iframe {
   display: -webkit-box;
