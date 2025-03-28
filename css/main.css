@@ -669,6 +669,9 @@ header {
   width: 1.5rem;
   background: #313534;
 }
+.timeline .date span {
+  font-size: 1.4rem;
+}
 /*End timeline*/
 
 /*Start contact*/
