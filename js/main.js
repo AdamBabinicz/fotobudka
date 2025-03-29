@@ -32,6 +32,8 @@ $(document).ready(function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector('form[name="contact"]');
+  const successMessage = document.getElementById("success-message");
+  const backToFormLink = document.getElementById("back-to-form");
 
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -45,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
       })
         .then((response) => {
           if (response.ok) {
-            form.style.display = "none";
-            document.getElementById("success-message").style.display = "block";
+            form.style.display = "none"; // Ukryj formularz
+            successMessage.style.display = "block"; // Pokaż komunikat o sukcesie
           } else {
             alert(
               "Wystąpił błąd podczas wysyłania formularza. Proszę spróbować ponownie."
@@ -59,5 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   } else {
     console.error("Formularz nie został znaleziony w dokumencie.");
+  }
+
+  // Przywróć formularz po kliknięciu w link "Wracaj na naszą stronę"
+  if (backToFormLink) {
+    backToFormLink.addEventListener("click", function () {
+      form.style.display = "block"; // Przywróć formularz
+      successMessage.style.display = "none"; // Ukryj komunikat sukcesu
+    });
   }
 });
