@@ -30,28 +30,30 @@ $(document).ready(function () {
   });
 });
 
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Zapobiega domyślnemu wysłaniu formularza
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Zapobiega domyślnemu wysłaniu formularza
 
-    var form = event.target;
-    var formData = new FormData(form);
+      var formData = new FormData(form);
 
-    // Ustawienia dla formularza, by wysłać dane bez przeładowania strony
-    fetch(form.action, {
-      method: form.method,
-      body: formData,
-    })
-      .then(function (response) {
-        // Ukrywa formularz i pokazuje komunikat o sukcesie
-        form.style.display = "none";
-        document.getElementById("success-message").style.display = "block";
+      // Ustawienia dla formularza, by wysłać dane bez przeładowania strony
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
       })
-      .catch(function (error) {
-        // W przypadku błędu, wyświetl komunikat
-        alert(
-          "Wystąpił błąd podczas wysyłania formularza. Proszę spróbować ponownie."
-        );
-      });
-  });
+        .then(function (response) {
+          // Ukrywa formularz i pokazuje komunikat o sukcesie
+          form.style.display = "none";
+          document.getElementById("success-message").style.display = "block";
+        })
+        .catch(function (error) {
+          // W przypadku błędu, wyświetl komunikat
+          alert(
+            "Wystąpił błąd podczas wysyłania formularza. Proszę spróbować ponownie."
+          );
+        });
+    });
+  }
+});
