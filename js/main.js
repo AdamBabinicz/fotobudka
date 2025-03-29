@@ -33,7 +33,6 @@ $(document).ready(function () {
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector('form[name="contact"]');
   const successMessage = document.getElementById("success-message");
-  const backToFormLink = document.getElementById("back-to-form");
 
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -47,8 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
       })
         .then((response) => {
           if (response.ok) {
-            form.style.display = "none"; // Ukrycie formularza
             successMessage.style.display = "block"; // Pokaż komunikat o sukcesie
+            form.reset(); // Resetowanie pól formularza
           } else {
             alert(
               "Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie."
@@ -58,15 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(() => {
           alert("Wystąpił błąd. Proszę spróbować ponownie.");
         });
-    });
-  }
-
-  // Obsługa powrotu do formularza
-  if (backToFormLink) {
-    backToFormLink.addEventListener("click", function (event) {
-      event.preventDefault();
-      form.style.display = "block";
-      successMessage.style.display = "none";
     });
   }
 });
