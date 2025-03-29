@@ -34,24 +34,40 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector('form[name="contact"]');
   const successMessage = document.getElementById("success-message");
 
-  if (form) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault(); // Blokujemy domyślne wysyłanie formularza
-
-      const formData = new FormData(form);
-
-      fetch(form.action, {
-        method: form.method,
-        body: formData,
-      })
-        .then((response) => (response.ok ? response : Promise.reject(response)))
-        .then(() => {
-          form.reset(); // Resetujemy formularz
-          successMessage.style.display = "block"; // Pokazujemy komunikat
-        })
-        .catch(() => {
-          alert("Wystąpił błąd. Spróbuj ponownie.");
-        });
-    });
+  if (!form) {
+    console.error("🚨 Formularz nie został znaleziony w dokumencie.");
+    return;
   }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Zatrzymujemy domyślne wysyłanie formularza
+    console.log("📨 Wysyłanie formularza...");
+
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      body: formData,
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    })
+      .then((response) => {
+        console.log("🔍 Odpowiedź serwera:", response);
+        if (response.ok) {
+          console.log("✅ Formularz wysłany pomyślnie!");
+
+          form.reset(); // Resetujemy pola formularza
+          successMessage.style.display = "block"; // Pokazujemy komunikat
+
+          return response.text(); // Zwracamy treść odpowiedzi (opcjonalne)
+        } else {
+          return Promise.reject(
+            `❌ Błąd: ${response.status} - ${response.statusText}`
+          );
+        }
+      })
+      .catch((error) => {
+        console.error("⚠️ Wystąpił błąd:", error);
+        alert("Wystąpił błąd. Spróbuj ponownie.");
+      });
+  });
 });
