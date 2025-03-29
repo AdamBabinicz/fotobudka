@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const formData = new FormData(form);
 
+    // Wysyłanie formularza do Netlify
     fetch("/", {
       method: "POST",
       body: formData,
@@ -55,14 +56,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (response.ok) {
           console.log("✅ Formularz wysłany pomyślnie!");
 
+          // Resetujemy formularz po wysłaniu
           form.reset(); // Resetujemy pola formularza
 
+          // Pokazujemy komunikat sukcesu
           if (successMessage) {
-            successMessage.style.display = "block"; // Pokazujemy komunikat
+            successMessage.style.display = "block";
           }
-
-          // Jeśli chcesz przekierowanie, odkomentuj poniższą linię:
-          // window.location.href = "/thank-you.html";
 
           return response.text();
         } else {
