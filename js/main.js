@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Automatyczne znikanie komunikatu po 5 sekundach
             setTimeout(() => {
               successMessage.style.display = "none";
-            }, 30000);
+            }, 10000);
           }
 
           return response.text();
