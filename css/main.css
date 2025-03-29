@@ -968,6 +968,6 @@ iframe {
   border: 0;
 }
 .input {
-  display: none;
+  /* display: none; */
   text-align: center;
 }
