@@ -45,20 +45,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const formData = new FormData(form);
 
-    fetch("/", {
+    const encode = (data) => {
+      return Object.keys(data)
+        .map(
+          (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&");
+    };
+
+    fetch(form.action, {
       method: "POST",
-      body: formData,
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode(Object.fromEntries(formData)),
     })
       .then((response) => {
-        console.log("🔍 Odpowiedź serwera:", response);
         if (response.ok) {
           console.log("✅ Formularz wysłany pomyślnie!");
-
           form.reset(); // Resetujemy pola formularza
-          successMessage.style.display = "block"; // Pokazujemy komunikat
-
-          return response.text(); // Zwracamy treść odpowiedzi (opcjonalne)
+          setTimeout(() => {
+            successMessage.style.display = "block"; // Pokazujemy komunikat
+          }, 500);
         } else {
           return Promise.reject(
             `❌ Błąd: ${response.status} - ${response.statusText}`
