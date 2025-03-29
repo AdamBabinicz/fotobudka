@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const formData = new FormData(form);
 
-    // Wysyłamy dane formularza do Netlify
     fetch("/", {
       method: "POST",
       body: formData,
