@@ -62,9 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (response.ok) {
           console.log("✅ Formularz wysłany pomyślnie!");
           form.reset(); // Resetujemy pola formularza
-          setTimeout(() => {
-            successMessage.style.display = "block"; // Pokazujemy komunikat
-          }, 500);
+
+          // Sprawdzamy, czy successMessage istnieje, zanim go wyświetlimy
+          if (successMessage) {
+            setTimeout(() => {
+              successMessage.style.display = "block";
+            }, 500);
+          }
         } else {
           return Promise.reject(
             `❌ Błąd: ${response.status} - ${response.statusText}`
