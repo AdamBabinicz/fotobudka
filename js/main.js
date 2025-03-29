@@ -31,7 +31,7 @@ $(document).ready(function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contact-form");
+  const form = document.getElementById("contact");
   if (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault(); // Zapobiega domyślnemu wysłaniu formularza
