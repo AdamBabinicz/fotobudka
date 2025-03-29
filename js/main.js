@@ -59,17 +59,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
           // Pokazujemy komunikat o sukcesie
           if (successMessage) {
-            successMessage.style.display = "block";
+            successMessage.style.display = "block"; // Pokaż komunikat
+            console.log("✅ Komunikat o sukcesie wyświetlony");
+
+            // Automatyczne znikanie komunikatu po 5 sekundach
+            setTimeout(() => {
+              successMessage.style.display = "none"; // Ukryj komunikat
+            }, 5000); // 5000 ms = 5 sekund
           }
 
           return response.text();
         } else {
-          return Promise.reject(`❌ Błąd: ${response.status}`);
+          console.error("Błąd serwera:", response.status, response.statusText);
+          return Promise.reject("Błąd: " + response.status);
         }
       })
       .catch((error) => {
         console.error("⚠️ Wystąpił błąd:", error);
         alert("Wystąpił błąd. Spróbuj ponownie.");
       });
+  });
+
+  // Dodaj nasłuchiwanie na zmianę w polach formularza
+  form.addEventListener("input", function () {
+    if (successMessage) {
+      successMessage.style.display = "none"; // Ukryj komunikat, gdy użytkownik zacznie wpisywać dane
+    }
   });
 });
