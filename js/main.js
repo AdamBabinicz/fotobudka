@@ -35,26 +35,38 @@ document.addEventListener("DOMContentLoaded", function () {
   const successMessage = document.getElementById("success-message");
   const backToFormLink = document.getElementById("back-to-form");
 
-  // Przywróć formularz po kliknięciu w link "Wracaj na naszą stronę"
-  if (backToFormLink) {
-    backToFormLink.addEventListener("click", function (event) {
-      event.preventDefault(); // Zatrzymuje standardowe działanie linku
-      form.style.display = "block"; // Przywróć formularz
-      successMessage.style.display = "none"; // Ukryj komunikat sukcesu
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Zatrzymujemy domyślne wysyłanie formularza
+
+      const formData = new FormData(form);
+
+      fetch("/", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) {
+            form.style.display = "none"; // Ukrycie formularza
+            successMessage.style.display = "block"; // Pokaż komunikat o sukcesie
+          } else {
+            alert(
+              "Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie."
+            );
+          }
+        })
+        .catch(() => {
+          alert("Wystąpił błąd. Proszę spróbować ponownie.");
+        });
     });
   }
 
-  if (form) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault(); // Zatrzymanie standardowego wysyłania formularza
-
-      // Tu nie musisz ręcznie wysyłać formularza, ponieważ Netlify to obsługuje
-      // ale możesz pokazać komunikat sukcesu, jeśli wysłanie się powiedzie.
-
-      form.style.display = "none"; // Ukryj formularz
-      successMessage.style.display = "block"; // Pokaż komunikat o sukcesie
+  // Obsługa powrotu do formularza
+  if (backToFormLink) {
+    backToFormLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      form.style.display = "block";
+      successMessage.style.display = "none";
     });
-  } else {
-    console.error("Formularz nie został znaleziony w dokumencie.");
   }
 });
