@@ -662,6 +662,9 @@
           data-aos-delay="300"
           action="/"
         >
+          <!-- Ukryte pole dla Netlify -->
+          <input type="hidden" name="form-name" value="contact" />
+
           <input type="hidden" name="email" value="puaro@vp.pl" />
           <label for="name">Imię i&nbsp;Nazwisko:</label>
           <input
@@ -680,7 +683,14 @@
             placeholder="Podaj swój email ..."
             required
           />
-          <input type="text" name="bot-field" class="input" />
+
+          <input
+            type="text"
+            name="bot-field"
+            class="input"
+            style="display: none"
+          />
+
           <label for="service">Wybierz usługę:</label>
           <select name="services" id="service" required>
             <option value="Namiot imprezowy">Namiot imprezowy</option>

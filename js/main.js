@@ -45,30 +45,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const formData = new FormData(form);
 
-    // Wysyłanie formularza do Netlify
+    // Wysyłamy dane formularza do Netlify
     fetch("/", {
       method: "POST",
       body: formData,
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
     })
       .then((response) => {
-        console.log("🔍 Odpowiedź serwera:", response);
         if (response.ok) {
           console.log("✅ Formularz wysłany pomyślnie!");
 
           // Resetujemy formularz po wysłaniu
           form.reset(); // Resetujemy pola formularza
 
-          // Pokazujemy komunikat sukcesu
+          // Pokazujemy komunikat o sukcesie
           if (successMessage) {
             successMessage.style.display = "block";
           }
 
           return response.text();
         } else {
-          return Promise.reject(
-            `❌ Błąd: ${response.status} - ${response.statusText}`
-          );
+          return Promise.reject(`❌ Błąd: ${response.status}`);
         }
       })
       .catch((error) => {
