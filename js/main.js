@@ -45,30 +45,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const formData = new FormData(form);
 
-    const encode = (data) => {
-      return Object.keys(data)
-        .map(
-          (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-        )
-        .join("&");
-    };
-
-    fetch(form.action, {
+    fetch("/", {
       method: "POST",
+      body: formData,
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode(Object.fromEntries(formData)),
     })
       .then((response) => {
+        console.log("🔍 Odpowiedź serwera:", response);
         if (response.ok) {
           console.log("✅ Formularz wysłany pomyślnie!");
+
           form.reset(); // Resetujemy pola formularza
 
-          // Sprawdzamy, czy successMessage istnieje, zanim go wyświetlimy
           if (successMessage) {
-            setTimeout(() => {
-              successMessage.style.display = "block";
-            }, 500);
+            successMessage.style.display = "block"; // Pokazujemy komunikat
           }
+
+          // Jeśli chcesz przekierowanie, odkomentuj poniższą linię:
+          // window.location.href = "/thank-you.html";
+
+          return response.text();
         } else {
           return Promise.reject(
             `❌ Błąd: ${response.status} - ${response.statusText}`
