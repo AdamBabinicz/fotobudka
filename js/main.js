@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Automatyczne znikanie komunikatu po 5 sekundach
             setTimeout(() => {
-              successMessage.style.display = "none"; // Ukryj komunikat
-            }, 5000); // 5000 ms = 5 sekund
+              successMessage.style.display = "none";
+            }, 30000);
           }
 
           return response.text();
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Dodaj nasłuchiwanie na zmianę w polach formularza
   form.addEventListener("input", function () {
     if (successMessage) {
-      successMessage.style.display = "none"; // Ukryj komunikat, gdy użytkownik zacznie wpisywać dane
+      successMessage.style.display = "none";
     }
   });
 });
