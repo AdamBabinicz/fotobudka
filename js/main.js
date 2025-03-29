@@ -36,26 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (form) {
     form.addEventListener("submit", function (event) {
-      event.preventDefault(); // Zatrzymujemy domyślne wysyłanie formularza
+      event.preventDefault(); // Blokujemy domyślne wysyłanie formularza
 
       const formData = new FormData(form);
 
-      fetch("/", {
-        method: "POST",
+      fetch(form.action, {
+        method: form.method,
         body: formData,
       })
-        .then((response) => {
-          if (response.ok) {
-            successMessage.style.display = "block"; // Pokaż komunikat o sukcesie
-            form.reset(); // Resetowanie pól formularza
-          } else {
-            alert(
-              "Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie."
-            );
-          }
+        .then((response) => (response.ok ? response : Promise.reject(response)))
+        .then(() => {
+          form.reset(); // Resetujemy formularz
+          successMessage.style.display = "block"; // Pokazujemy komunikat
         })
         .catch(() => {
-          alert("Wystąpił błąd. Proszę spróbować ponownie.");
+          alert("Wystąpił błąd. Spróbuj ponownie.");
         });
     });
   }
