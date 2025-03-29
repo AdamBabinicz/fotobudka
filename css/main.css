@@ -968,14 +968,14 @@ iframe {
   border: 0;
 }
 .input {
-  display: none; /* Ukrycie komunikatu domyślnie */
+  display: none;
   text-align: center;
   padding: 20px;
-  background-color: #4caf50;
+  /* background-color: #4caf50; */
   color: white;
   margin-top: 20px;
   border-radius: 5px;
-  width: 100%; /* Komunikat zajmuje pełną szerokość dostępnego miejsca */
-  max-width: 600px; /* Maksymalna szerokość komunikatu */
-  margin: 0 auto; /* Wyśrodkowanie komunikatu */
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
