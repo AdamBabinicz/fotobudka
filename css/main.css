@@ -976,7 +976,11 @@ iframe {
   margin-top: 20px;
   border-radius: 5px;
   max-width: 400px !important;
-  width: 100%;
+  width: 100% !important;
   margin-left: auto;
   margin-right: auto;
+}
+#success-message {
+  text-align: center;
+  width: 100% !important;
 }
