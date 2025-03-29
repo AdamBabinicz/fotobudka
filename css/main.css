@@ -263,14 +263,31 @@ header {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  text-shadow: 0.05rem 0.05rem 0.05rem rgba(2, 2, 2, 0.3);
+  text-shadow: 0.05rem 0.05rem 0.05rem rgba(131, 131, 131, 0.3);
+  box-shadow: inset -3px -3px 7px #ffffffb2,
+    inset 3px 3px 5px rgba(94, 104, 121, 0.945);
+  border-radius: 3%;
+  width: 55%;
+  margin: auto;
+  padding-top: 2rem;
+  backdrop-filter: blur(3px);
 }
+
+/* Opcjonalne półprzezroczyste tło */
+/* .landing-text h1::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 120%;
+  background: rgba(0, 0, 0, 0.05);
+  filter: blur(10px);
+  z-index: -1;
+  border-radius: 5%;
+} */
+
 .landing-text h1::first-letter {
   font-size: 13rem;
   text-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
-  /* box-shadow: inset -3px -3px 7px #ffffffb2,
-    inset 3px 3px 5px rgba(94, 104, 121, 0.945);
-  border-radius: 3%; */
 }
 .landing-text h2 {
   font-family: "Great Vibes", cursive;
@@ -797,6 +814,7 @@ input[type="submit"]:hover {
 @media screen and (max-width: 768px) {
   .landing-text h1 {
     font-size: 4.5rem;
+    width: 90%;
   }
   .landing-text h1::first-letter {
     font-size: 8rem;
