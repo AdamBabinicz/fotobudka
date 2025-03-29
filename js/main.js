@@ -31,34 +31,31 @@ $(document).ready(function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contact-form");
+  const form = document.querySelector('form[name="contact"]');
+
   if (form) {
     form.addEventListener("submit", function (event) {
-      event.preventDefault(); // Zapobiega domyślnemu wysłaniu formularza
+      event.preventDefault(); // Zatrzymanie standardowego wysyłania formularza
 
-      // Sprawdzamy, czy formularz jest dostępny
-      if (form instanceof HTMLFormElement) {
-        var formData = new FormData(form);
+      const formData = new FormData(form);
 
-        // Ustawienia dla formularza, by wysłać dane bez przeładowania strony
-        fetch(form.action, {
-          method: form.method,
-          body: formData,
-        })
-          .then(function (response) {
-            // Ukrywa formularz i pokazuje komunikat o sukcesie
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) {
             form.style.display = "none";
             document.getElementById("success-message").style.display = "block";
-          })
-          .catch(function (error) {
-            // W przypadku błędu, wyświetl komunikat
+          } else {
             alert(
               "Wystąpił błąd podczas wysyłania formularza. Proszę spróbować ponownie."
             );
-          });
-      } else {
-        console.error("Formularz nie jest poprawnym HTMLFormElement.");
-      }
+          }
+        })
+        .catch((error) => {
+          alert("Wystąpił błąd. Proszę spróbować ponownie.");
+        });
     });
   } else {
     console.error("Formularz nie został znaleziony w dokumencie.");
