@@ -642,9 +642,9 @@
             class="input"
             style="display: none"
           />
-
           <label for="service">Wybierz usługę:</label>
           <select name="services" id="service" required>
+            <option value="" disabled selected>Wybierz usługę</option>
             <option value="Namiot imprezowy">Namiot imprezowy</option>
             <option value="Stoły">Stoły</option>
             <option value="Krzesła">Krzesła</option>
@@ -654,7 +654,6 @@
             </option>
             <option value="Inne">Inne</option>
           </select>
-
           <label for="subject">Temat:</label>
           <textarea
             name="subject"
