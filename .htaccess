@@ -1,15 +1,15 @@
-# Przekierowanie dla www -> bez www
+# Wymuszenie HTTPS (przekierowanie z http:// na https://)
 RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Przekierowanie dla www -> bez www
 RewriteCond %{HTTP_HOST} ^www\.namioty-imprezowe\.netlify\.app$
-RewriteRule ^(.*)$ http://namioty-imprezowe.netlify.app/$1 [R=301,L]
+RewriteRule ^(.*)$ https://namioty-imprezowe.netlify.app/$1 [R=301,L]
 
 # Blokowanie niechcianych user agentów
 RewriteCond %{HTTP_USER_AGENT} libwww-perl.* [NC]
 RewriteRule .* - [F,L]
-
-# Inne reguły (np. do favicon, plików .htm itp.)
-RewriteRule ^favicon\.ico - [L]
-RewriteRule ^design/standard/images/favicon\.ico - [L]
 
 # Blokowanie zapytań z niechcianymi user agentami i z parametrami zawierającymi http
 RewriteCond %{QUERY_STRING} ^(.*)=http [NC]
@@ -21,7 +21,6 @@ RewriteRule ^index.html$ https://namioty-imprezowe.netlify.app/ [R=301,L]
 RewriteRule ^index.(php|html|htm)$ https://namioty-imprezowe.netlify.app/ [R=301,L]
 
 # Ustawienia przekierowania końcówek URL
-RewriteEngine On
 RewriteCond %{REQUEST_URI} [^\./\\] [NC]
 RewriteCond %{REQUEST_URI}.htm -f [NC]
 RewriteRule ^(.+)$ $1.htm [L]
