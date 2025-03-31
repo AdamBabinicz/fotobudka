@@ -1,20 +1,32 @@
 $(document).ready(function () {
+  console.log("📌 Dokument gotowy!");
+
+  // Obsługa menu mobilnego
   $(".menu-toggler").on("click", function () {
     $(this).toggleClass("open");
     $(".top-nav").toggleClass("open");
   });
+
   $(".top-nav .nav-link").on("click", function () {
     $(".menu-toggler").removeClass("open");
     $(".top-nav").removeClass("open");
   });
-  $('nav a[href*="#"]').on("click", function () {
-    $("html, body").animate(
-      {
-        scrollTop: $($(this).attr("href")).offset().top - 100,
-      },
-      2000
-    );
+
+  // Płynne przewijanie do sekcji
+  $('nav a[href*="#"]').on("click", function (e) {
+    e.preventDefault();
+    const target = $($(this).attr("href"));
+    if (target.length) {
+      $("html, body").animate(
+        {
+          scrollTop: target.offset().top - 100,
+        },
+        2000
+      );
+    }
   });
+
+  // Przycisk powrotu do góry
   $("#up").on("click", function () {
     $("html, body").animate(
       {
@@ -23,13 +35,21 @@ $(document).ready(function () {
       2000
     );
   });
-  AOS.init({
-    easing: "ease",
-    duration: 1800,
-    once: true,
-  });
+
+  // Sprawdzenie, czy AOS jest załadowany
+  if (typeof AOS !== "undefined") {
+    console.log("✅ AOS załadowany!");
+    AOS.init({
+      easing: "ease",
+      duration: 1800,
+      once: true,
+    });
+  } else {
+    console.error("🚨 AOS nie został załadowany!");
+  }
 });
 
+// Obsługa formularza kontaktowego
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector('form[name="contact"]');
   const successMessage = document.getElementById("success-message");
@@ -52,16 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => {
         if (response.ok) {
           console.log("✅ Formularz wysłany pomyślnie!");
-
-          // Resetujemy formularz po wysłaniu
           form.reset(); // Resetujemy pola formularza
 
           // Pokazujemy komunikat o sukcesie
           if (successMessage) {
-            successMessage.style.display = "block"; // Pokaż komunikat
+            successMessage.style.display = "block";
             console.log("✅ Komunikat o sukcesie wyświetlony");
 
-            // Automatyczne znikanie komunikatu po 5 sekundach
+            // Automatyczne znikanie komunikatu po 10 sekundach
             setTimeout(() => {
               successMessage.style.display = "none";
             }, 10000);
@@ -69,7 +87,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
           return response.text();
         } else {
-          console.error("Błąd serwera:", response.status, response.statusText);
+          console.error(
+            "❌ Błąd serwera:",
+            response.status,
+            response.statusText
+          );
           return Promise.reject("Błąd: " + response.status);
         }
       })
@@ -79,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 
-  // Dodaj nasłuchiwanie na zmianę w polach formularza
+  // Ukrywanie komunikatu o sukcesie po edycji formularza
   form.addEventListener("input", function () {
     if (successMessage) {
       successMessage.style.display = "none";
